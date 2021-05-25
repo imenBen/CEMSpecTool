@@ -2495,8 +2495,7 @@ section.content {
   .btn:not(.btn-link):not(.btn-circle):hover {
     outline: none; }
   .btn:not(.btn-link):not(.btn-circle) i {
-    font-size: 20px;
-    position: relative;
+    font-size: 16px;
     top: 3px; }
   .btn:not(.btn-link):not(.btn-circle) span {
     position: relative;
@@ -5047,13 +5046,13 @@ section.content {
   margin-bottom: 25px; }
   .form-group .form-control {
     width: 100%;
-    border: none;
+    /*border: none;*/
     box-shadow: none;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     -ms-border-radius: 0;
     border-radius: 0;
-    padding-left: 0; }
+    /*padding-left: 0;*/ }
   .form-group .help-info {
     float: right;
     font-size: 12px;
@@ -7703,7 +7702,7 @@ fieldset[disabled] .form-control {
   text-align: center; }
 
 /* Jquery Nestable ============================= */
-.dd-handle {
+/*.dd-handle {
   background-color: #f9f9f9 !important; }
   .dd-handle:hover {
     color: #2196F3; }
@@ -7717,7 +7716,7 @@ fieldset[disabled] .form-control {
 
 .dd3-content:hover {
   color: #2196F3; }
-
+*/
 /* Login Page ================================== */
 .login-page {
   background-color: #00BCD4;

@@ -123,6 +123,27 @@ public class SpecificOntologyGenerator {
 		return superClass;
 	}
 
+	//get the sub Classes of a class
+		public List<String> getSubClasses(String className){
+			List<String> subclasses = new ArrayList<String>();
+			OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
+			// We can get a reference to a data factory from an OWLOntologyManager.
+			OWLDataFactory factory = ontology.getOWLOntologyManager().getOWLDataFactory();
+			OWLClass owlClass = factory.getOWLClass(prefix + className);
+			Iterator<OWLSubClassOfAxiom> subs = ontology.subClassAxiomsForSuperClass(owlClass).iterator();
+			
+			while(subs.hasNext()){
+				String subclass = subs.next().getSubClass().asOWLClass().getIRI().getShortForm();
+				subclasses.add(subclass);
+				System.out.println(subclass+" sous de "+ className);
+				subclasses.addAll(getSubClasses(subclass));
+				
+			}
+			return subclasses;
+					
+		}
+		
+		
 	public void createSubClass(String className, String subClassName) {
 		OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
 		// We can get a reference to a data factory from an OWLOntologyManager.
@@ -376,6 +397,18 @@ public class SpecificOntologyGenerator {
 				return CEMDataTypes.LITERAL;
 			}
 		}return CEMDataTypes.EMPTY_TYPE;
+	}
+	/*find direct super property of a dataproperty*/
+	/*aclass : c class , datapropertyname = a data property of the class*/
+	public String FindDirectSuperDataProperty(String aclass, String dataPropertyName){
+		String superClass = getSuperClass(aclass);
+		List<OWLDataProperty> dataproperties = getDataPropertiesOfAClass(superClass) ;
+		for (OWLDataProperty dp : dataproperties) {
+			String dpString = dp.asOWLDataProperty().getIRI().getShortForm();
+			if (dpString.split("_")[0].equals(dataPropertyName.split("_")[0]) && !dpString.equals(dataPropertyName) )
+					return dpString;
+		}
+			return null;
 	}
 
 }
