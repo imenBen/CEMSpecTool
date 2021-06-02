@@ -144,6 +144,27 @@ public class SpecificOntologyGenerator {
 		}
 		
 		
+		public List<String> getSubDataProperties(String propertyName){
+			List<String> subProperties = new ArrayList<String>();
+			OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
+			// We can get a reference to a data factory from an OWLOntologyManager.
+			OWLDataFactory factory = ontology.getOWLOntologyManager().getOWLDataFactory();
+			OWLDataProperty owlDataProperty = factory.getOWLDataProperty(prefix + propertyName);
+			Iterator<OWLSubDataPropertyOfAxiom> subs = ontology.dataSubPropertyAxiomsForSuperProperty(owlDataProperty).iterator();
+			
+			while(subs.hasNext()){
+				String subProperty = subs.next().getSubProperty().asOWLDataProperty().getIRI().getShortForm();
+				subProperties.add(subProperty);
+				System.out.println(subProperty+" sous prop de "+ propertyName);
+				subProperties.addAll(getSubDataProperties(subProperty));
+				
+			}
+			return subProperties;
+					
+		}
+		
+		
+		
 	public void createSubClass(String className, String subClassName) {
 		OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
 		// We can get a reference to a data factory from an OWLOntologyManager.
@@ -178,11 +199,27 @@ public class SpecificOntologyGenerator {
 		createSubClass("ProductItem", productItem);
 	}
 
+	/* remove a data property axiom from a class
+	 */
+	public boolean removeDataProperty(String className, String dataPropertyName) {
+		List<OWLDataProperty> properties = getDataPropertiesOfAClass(className);
+		/* supprimer la data property si elle existe déja*/
+		for(OWLDataProperty prop : properties) {
+			if (prop.getIRI().getShortForm().equals(dataPropertyName)){
+				ontology.removeAxioms(ontology.axioms(prop));
+				return true;
+			}
+		}return false;
+	}
 	/* data properties generation */
 
 	
 	
 	public void addDataPropertyNumeric(String className, String dataPropertyName, String SuperDataPropertyName) {
+		boolean delete = removeDataProperty(className, dataPropertyName)	;	
+		if (delete)
+			System.out.println("********************************deleted");
+		/*remove data property of it exists*/
 		OWLOntologyManager manager = ontology.getOWLOntologyManager();
 		// We can get a reference to a data factory from an OWLOntologyManager.
 		OWLDataFactory factory = manager.getOWLDataFactory();
@@ -199,6 +236,7 @@ public class SpecificOntologyGenerator {
 		manager.addAxiom(ontology, rangeAxiom);
 		manager.addAxiom(ontology, subDataPropertyAxion);
 		
+		
 	}
 	
 	public void addDataPropertyNumeric(String className, String dataPropertyName) {
@@ -206,6 +244,9 @@ public class SpecificOntologyGenerator {
 	}
 
 	public void addDataPropertyString(String className, String dataPropertyName, String SuperDataPropertyName) {
+		boolean delete = removeDataProperty(className, dataPropertyName)	;	
+		if (delete)
+			System.out.println("********************************deleted");
 		OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
 		// We can get a reference to a data factory from an OWLOntologyManager.
 		OWLDataFactory factory = ontology.getOWLOntologyManager().getOWLDataFactory();
@@ -229,6 +270,10 @@ public class SpecificOntologyGenerator {
 
 	public void addDataPropertyNumericRange(String className, String dataPropertyName, String SuperDataPropertyName, double minValue,
 			double maxValue) {
+		boolean delete = removeDataProperty(className, dataPropertyName)	;	
+		if (delete)
+			System.out.println("********************************deleted");
+		
 		OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
 		// We can get a reference to a data factory from an OWLOntologyManager.
 		OWLDataFactory factory = ontology.getOWLOntologyManager().getOWLDataFactory();
@@ -261,6 +306,11 @@ public class SpecificOntologyGenerator {
 	 * add sub data property of a property in the hierarchy of data properties
 	 */
 	public void addDataPropertyEnumeration(String className, String dataPropertyName,String SuperDataPropertyName, List<String> literalValues) {
+		boolean delete = removeDataProperty(className, dataPropertyName)	;
+		
+		if (delete)
+			System.out.println("********************************deleted");
+		
 		OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
 		// We can get a reference to a data factory from an OWLOntologyManager.
 		OWLDataFactory factory = ontology.getOWLOntologyManager().getOWLDataFactory();
@@ -304,6 +354,7 @@ public class SpecificOntologyGenerator {
 		}
 		return datatypes;
 	}
+	
 
 	public List<OWLDataProperty> getDataPropertiesOfAClass(String className) {
 		OWLDataFactory factory = ontology.getOWLOntologyManager().getOWLDataFactory();
@@ -411,4 +462,18 @@ public class SpecificOntologyGenerator {
 			return null;
 	}
 
+	
+	public List <String> FindDirectSuperDataProperty( String dataPropertyName){
+		List <String> classProp = new ArrayList<String>();
+		OWLDataFactory factory = ontology.getOWLOntologyManager().getOWLDataFactory();
+		OWLDataProperty owlDataProperty = factory.getOWLDataProperty(prefix + dataPropertyName);
+		Iterator<OWLDataPropertyDomainAxiom> domainAxioms = ontology.dataPropertyDomainAxioms(owlDataProperty).iterator();
+		
+	    classProp.add(domainAxioms.next().getDomain().asOWLClass().getIRI().getShortForm());
+		
+		Iterator<OWLSubDataPropertyOfAxiom> dataproperties = ontology.dataSubPropertyAxiomsForSubProperty(owlDataProperty).iterator();
+		classProp.add(dataproperties.next().getSuperProperty().asOWLDataProperty().getIRI().getShortForm());
+		
+			return classProp;
+	}
 }

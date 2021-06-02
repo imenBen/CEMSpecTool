@@ -58,8 +58,8 @@ public class OntologySpecificationServices {
 		JsonObject json = gson.fromJson(categories, JsonObject.class);
 		JsonArray cat = json.get("categories").getAsJsonArray();
 		addCtaegories("ProductCategory", cat);
-		System.out.println("rest f000onctionne5 : " + cat + "eeeeeee" + categories);
-		System.out.println("reponse : " + Response.ok().build());
+		// System.out.println("rest f000onctionne5 : " + cat + "eeeeeee" + categories);
+		// System.out.println("reponse : " + Response.ok().build());
 		return Response.ok().build();
 	}
 
@@ -68,7 +68,8 @@ public class OntologySpecificationServices {
 		while (iterator.hasNext()) {
 			JsonElement element = iterator.next();
 			generator.createSubClass(superCategory, element.getAsJsonObject().get("name").getAsString());
-			System.out.println("#######" + element.getAsJsonObject().get("name").getAsString());
+			// System.out.println("#######" +
+			// element.getAsJsonObject().get("name").getAsString());
 			if (element.getAsJsonObject().get("children") != null)
 				addCtaegories(element.getAsJsonObject().get("name").getAsString(),
 						element.getAsJsonObject().get("children").getAsJsonArray());
@@ -92,11 +93,11 @@ public class OntologySpecificationServices {
 			String className = jsonText.get("className").getAsString();
 			int isnew = jsonText.get("isnew").getAsInt();
 			String dataPropertyName = jsonText.get("dataPropertyName").getAsString();
-			//System.out.println("************" + jsonText + "*********************");
+			System.out.println("************" + jsonText + "*********************");
 			String dataPropertyType = jsonText.get("dataPropertyType").getAsString();
 			// sub classes of the class
 			List<String> subclasses = generator.getSubClasses(className);
-			//System.out.println("subclasses of" + className + " are : " + subclasses);
+			// System.out.println("subclasses of" + className + " are : " + subclasses);
 			// identification of added sub dataproperties
 			int i = 1;
 			if (dataPropertyType.equals(CEMDataTypes.NUMERIC.getId())) {
@@ -118,6 +119,7 @@ public class OntologySpecificationServices {
 						// }
 					}
 				} else {
+
 					String superDp = generator.FindDirectSuperDataProperty(className, dataPropertyName);
 					generator.addDataPropertyNumeric(className, dataPropertyName, superDp);
 				}
@@ -145,8 +147,23 @@ public class OntologySpecificationServices {
 				} else {
 					String superDp = generator.FindDirectSuperDataProperty(className, dataPropertyName);
 					generator.addDataPropertyNumericRange(className, dataPropertyName, superDp, min, max);
+					List<String> subProperties = generator.getSubDataProperties(dataPropertyName);
+					// System.out.println("subpropertiesssss of "+dataPropertyName+" is
+					// "+subProperties);
+					for (String property : subProperties) {
+						List<String> subsuperDp = generator.FindDirectSuperDataProperty(property);
+						// System.out.println("heeeeeeere "+subsuperDp.get(1)+" "+subsuperDp.get(0)+"
+						// "+min+" "+max+" ") ;
+						if (subsuperDp.get(1) == null)
+							generator.addDataPropertyNumericRange(subsuperDp.get(0), property, min, max);
+
+						else
+							generator.addDataPropertyNumericRange(subsuperDp.get(0), property, subsuperDp.get(1), min,
+									max);
+
+					}
 				}
-				
+
 			} else if (dataPropertyType.equals(CEMDataTypes.LITERAL_VALUES.getId())) {
 				JsonArray enumValues = jsonText.get("enums").getAsJsonArray();
 				List<String> values = new ArrayList<String>();
@@ -170,10 +187,25 @@ public class OntologySpecificationServices {
 										values);
 							i++;
 						}
-	}
-				} else {
-					String superDp = generator.FindDirectSuperDataProperty(className, dataPropertyName);
-					generator.addDataPropertyEnumeration(className, dataPropertyName, superDp, values);
+					} else {
+						String superDp = generator.FindDirectSuperDataProperty(className, dataPropertyName);
+						generator.addDataPropertyEnumeration(className, dataPropertyName, superDp, values);
+						List<String> subProperties = generator.getSubDataProperties(dataPropertyName);
+						System.out.println("subpropertiesssss of "+dataPropertyName+" is "+subProperties);
+						for (String property : subProperties) {
+							List<String> subsuperDp = generator.FindDirectSuperDataProperty(property);
+							if (subsuperDp.get(1) == null)
+								generator.addDataPropertyEnumeration(subsuperDp.get(0), property, values);
+
+							else {
+								generator.addDataPropertyEnumeration(subsuperDp.get(0), property, subsuperDp.get(1),
+										values);
+								System.out.println(
+										"heeeeeeere " + subsuperDp.get(1) + " " + subsuperDp.get(0) + " " + values + " ");
+								}
+
+						}
+					}
 				}
 			} else if (dataPropertyType.equals(CEMDataTypes.LITERAL.getId())) {
 				if (isnew == 1) {
@@ -207,7 +239,7 @@ public class OntologySpecificationServices {
 	@Produces(MediaType.TEXT_PLAIN)
 	public String getSuperCategory(@PathParam("category") String category) {
 		String superClass = generator.getSuperClass(category);
-		System.out.println(category + " superClass " + superClass);
+		// System.out.println(category + " superClass " + superClass);
 		return superClass;
 	}
 
@@ -216,24 +248,25 @@ public class OntologySpecificationServices {
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getSuperDataProperties(@PathParam("category") String category) {
 		List<Property> properties = new ArrayList<Property>();
-		String superCategory = getSuperCategory(category);
+		// String superCategory = getSuperCategory(category);
 		// if(!superCategory.equals("ProductCategory")){ deleted because the properties
 		// of the root do not appear in the GUI 24/05/21
 		List<OWLDataProperty> dataProperties = generator
 				.getDataPropertiesOfAClass(/* getSuperCategory( */category/* ) */);
-		System.out.println("dataProperties :" + dataProperties);
+		// System.out.println("dataProperties :" + dataProperties);
 		for (OWLDataProperty oDataProperty : dataProperties) {
 			Property property = new Property();
 			property.setName(oDataProperty.getIRI().getShortForm());
 			OWLDataRange range = generator.getRangeAxiomOfDataProperty(oDataProperty);
 			if (range != null) {
 				property.setType(generator.getRangeType(range).getId());
+
 				property.setValues(generator.getRangeFromRamgeAxiom(range));
 				properties.add(property);
 			}
 		}
 		// }
-		System.out.println("properties :" + properties);
+		// System.out.println("properties :" + properties);
 		GenericEntity<List<Property>> entity = new GenericEntity<List<Property>>(properties) {
 		};
 		return Response.ok(entity).build();
@@ -246,7 +279,7 @@ public class OntologySpecificationServices {
 		OWLDataRange range = generator.getRangeAxiomOfDataProperty(dataProperty);
 		if (range != null) {
 			List<String> values = generator.getRangeFromRamgeAxiom(range);
-			System.out.println("values : " + values);
+			// System.out.println("values : " + values);
 			GenericEntity<List<String>> entity = new GenericEntity<List<String>>(values) {
 			};
 			return Response.ok(entity).build();

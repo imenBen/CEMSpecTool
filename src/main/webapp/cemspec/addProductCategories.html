@@ -53,7 +53,7 @@
 <link href="../css/ddlist.css" rel="stylesheet" />
 </head>
 
-<body class="theme-indigo">
+<body class="theme-teal">
 
 	<!-- Overlay For Sidebars -->
 	<div class="overlay"></div>
@@ -218,7 +218,7 @@
 			</div>
 			<div class="row clearfix">
 				<!-- Default Example -->
-				<div class="col-lg-5 col-md-7 col-sm-12 col-xs-12">
+				<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
 					<div class="card">
 						<div class="header">
 							<h2>
@@ -261,7 +261,7 @@
 														placeholder="Category name" required>
 												</div>
 
-												<button class="btn btn-primary" id="addButton">
+												<button class="btn bg-indigo" id="addButton">
 													<i class="fa fa-plus-circle" aria-hidden="true"></i> Add
 													product category
 												</button>
@@ -277,7 +277,7 @@
 														placeholder="category name" required>
 												</div>
 
-												<button class="btn btn-primary" id="editButton">Edit
+												<button class="btn bg-indigo" id="editButton">Edit
 													category</button>
 											</form>
 										</div>
@@ -303,8 +303,18 @@
 								</div>
 							</div>
 							<b></b>
-							<button type="button" class="btn btn-default waves-effect"
+							<div class="row clearfix">
+								<div class="col-sm-12">
+									<div style="text-align: center" class="body">
+										<button type="button" class="btn bg-red waves-effect"
 								id="submitProdCat">Submit</button>
+										<br />
+
+									</div>
+								</div>
+
+							</div>
+							
 
 						</div>
 					</div>
@@ -402,17 +412,15 @@
 																+ category,
 														//url: "http://localhost:8080/cem/config/getDataProperties/"+category, //embed server 
 														success : function(data) {
-															var i = 0 ;
+															var i = 0;
 															$
 																	.each(
 																			data,
-																			
+
 																			function(
 																					index,
 																					property) {
-																				
-																				
-																				
+
 																				$(
 																						'#super-attributes')
 																						.append(
@@ -438,39 +446,72 @@
 																										+ '</div>'
 																										+ ' </div>'
 																										+ '</div> '
-																										+ '<div class="col-sm-1">	'
-																										+ '<button type="button" style = "border: none;float: right;" class="btn btn-default btn-xs waves-effect" id="editsuprop">'
-																										+ '	<i style="color:red" class="material-icons">tune</i>'
-																										+ '</button></div> <div class="typeConfig enumerations"></div>');
-																				
-																				var types=[];
+																										+ '<div class="col-sm-1" id="tuneit'+index+'">	'
+																										+ '</div> <div class=" typeConfig enumerations"></div>');
+
+																				var types = [];
 																				if (getType(property.type) == "Numeric") {
-																					types = [[1,"Numeric"],[2,"Numeric Range"]];
+																					types = [
+																							[
+																									1,
+																									"Numeric" ],
+																							[
+																									2,
+																									"Numeric Range" ] ];
 																				} else {
 																					if (getType(property.type) == "Literal") {
-																						types = [[4,"Literal"],[3,"Enumeration"]];
-																						
+																						types = [
+																								[
+																										4,
+																										"Literal" ],
+																								[
+																										3,
+																										"Enumeration" ] ];
+
 																					} else {
 																						if (getType(property.type) == "Enumeration") {
-																							types = [[3,"Enumeration"]];
-																							
+																							types = [ [
+																									3,
+																									"Enumeration" ] ];
+
 																						} else {
-																							types = [[2,"Numeric Range"]];
-																							
+																							types = [ [
+																									2,
+																									"Numeric Range" ] ];
+
 																						}
 																					}
 																				}
-																				
-																				for(v in types){
-																				    var option=$('<option></option>');
-																				    option.attr('value',types[v][0]);
-																				    option.text(types[v][1]);
-																				     $('#types'+index).append(option);
-																				    // alert(option);
-																				   
+
+																				for (v in types) {
+																					var option = $('<option></option>');
+																					option
+																							.attr(
+																									'value',
+																									types[v][0]);
+																					option
+																							.text(types[v][1]);
+																					$(
+																							'#types'
+																									+ index)
+																							.append(
+																									option);
+																					if (types.length == 1) {
+																						$(
+																								'#tuneit'
+																										+ index)
+																								.append(
+																										//'<button type="button" style = "border: none;float: right;" class="btn btn-default btn-xs waves-effect" id="editsuprop">'
+																											//	+ '	<i style="color:red" class="material-icons">tune</i>'
+																											//	+ '</button>'
+																												 '<button class="btn bg-indigo" id="editsuprop"><i style="color:red" class="material-icons"></i> Edit values</button>'
+																												);
+																					}
+																					// alert(option);
+
 																				}
-																				});
-															
+																			});
+
 															$('#attributes')
 																	.html(
 																			'<div  id="attribute-1" class="attributeRow row clearfix">'
@@ -494,16 +535,17 @@
 																					+ ' </div>'
 																					+
 
-																					' <div class="typeConfig enumerations">  '
+																					' <div class=" typeConfig enumerations" id="enum">  '
 																					+
 
 																					' </div>        '
 																					+ ' <div class="col-sm-1" >      '
-																					+ '	 <button type="button" style = "border: none;float: right;" class="btn btn-default btn-xs waves-effect" id="addAttribute"><i style="color:green" class="material-icons">add_circle</i></button><br />'
+																					+ '<button class="btn bg-indigo" id="addAttribute"><i class="fa fa-plus-circle" aria-hidden="true" ></i> Add new property</button>'
+																					//+ '	 <button type="button" style = "border: none;float: right;" class="btn btn-default btn-xs waves-effect" id="addAttribute"><i style="color:green" class="material-icons">add_circle</i></button><br />'
 																					+ '</div>'
 																					+ '</div> ');
 
-															},
+														},
 														error : function(data) {
 
 															//alert(window.JSON.stringify($data));
@@ -536,44 +578,30 @@
 																		.val();
 																//changing property types for numeric and literal if there is restriction
 																var propertytype;
-																if ($(row)
+
+																propertytype = getTypeId($(
+																		row)
 																		.find(
 																				'.superPropertyType')
-																		.val() == 1)
-																	propertytype = getTypeId(1);
-																else if ($(row)
-																		.find(
-																				'.superPropertyType')
-																		.val() == 4)
-																	propertytype = getTypeId(4);
-																else
-																	propertytype = getTypeId($(
-																			row)
-																			.find(
-																					'.superPropertyType')
-																			.val());
+																		.val());
 
 																//ranges for range and restr    icted numeric types
 																var minRange = "", maxRange = "";
-																if (($(row)
-																		.find(
-																				'.superPropertyType')
-																		.val() == 1)) {
-																	minRange = $(
-																			row)
-																			.find(
-																					'.typeConfig .minRange')
-																			.val();
-																	maxRange = $(
-																			row)
-																			.find(
-																					'.typeConfig .maxRange')
-																			.val();
-																} else if (($(
+
+																minRange = $(
 																		row)
 																		.find(
-																				'superPropertyType')
-																		.val() == 2)) {
+																				'input.minRange')
+																		.val();
+																maxRange = $(
+																		row)
+																		.find(
+																				'input.maxRange')
+																		.val();
+																
+																if (minRange === undefined
+																		&& maxRange === undefined) {
+
 																	minRange = $(
 																			row)
 																			.find(
@@ -584,10 +612,8 @@
 																			.find(
 																					'span.maxValue')
 																			.text();
-																} else {
-																			minRange = "",
-																			maxRange = "";
 																}
+
 																var tabenum = [];
 																$(row)
 																		.find(
@@ -635,14 +661,18 @@
 																			.val(),
 																	className : category,
 																	dataPropertyName : property,
-																	dataPropertyType : propertytype,
+																	dataPropertyType : $(
+																			row)
+																			.find(
+																					'.superPropertyType')
+																			.val(),
 																	isnew : 0,
 																	maxRange : maxRange,
 																	minRange : minRange,
 																	enums : tabenum
 																}
 																tab.push(obj);
-																//  }
+														
 
 															});
 
@@ -735,7 +765,7 @@
 											var proptype = $(this).parents(
 													'.superAttributeRow').find(
 													'.superPropertyType').val();
-											alert(proptype);
+
 											var monThis = $(this).parents(
 													'.superAttributeRow');
 											monThis.addClass('clicked');
@@ -747,9 +777,13 @@
 														.html(
 																'<div class="col-sm-3"><div class="form-group"> <div class="form-line">'
 																		+ ' <input type="text" class="form-control enumelt" placeholder="Value" >  </div> </div> </div>	<div class="col-sm-1">	'
-																		+ '<button type="button" style = "border: none;float: right;" class="btn btn-default btn-xs waves-effect" id="addenum">'
-																		+ '	<i style="color:blue" class="material-icons">add_circle</i>'
-																		+ '</button></div>');
+																		+ ' <button class="btn bg-deep-purple" id="addenum">'
+																		+ '<i class="fa fa-plus-circle" aria-hidden="true" ></i> Add a value'
+																		+ '</button>'
+														//+ '<button type="button" style = "border: none;float: right;" class="btn btn-default btn-xs waves-effect" id="addenum">'
+														//	+ '	<i style="color:blue" class="material-icons">add_circle</i>'
+														//+ '</button></div>
+														);
 											} else if (proptype == 1) {
 												$(this)
 														.parents(
@@ -763,17 +797,10 @@
 																'.superAttributeRow')
 														.find('.typeConfig')
 														.html(
-																'<div class="row clearfix"><div class="col-sm-4">'
+																'<div class="row clearfix"><div class="col-sm-3">'
 																		+ ' <select class="form-control show-tick supenumval" multiple>'
 																		+ ' </select></div></div>');
-												$(
-														'#'
-																+ $(this)
-																		.parents(
-																				'.superAttributeRow')
-																		.attr(
-																				'id')
-																+ ' select:not(.ms)')
+												$('#enum' + ' select:not(.ms)')
 														.selectpicker();
 											} else if (proptype == 2) {
 												$(this)
@@ -781,7 +808,7 @@
 																'.superAttributeRow')
 														.find('.typeConfig')
 														.html(
-																'<div class="col-md-4">'
+																'<div class="col-sm-3">'
 																		+ ' <div class="nouislider_range_example"></div>'
 																		+ '<div class="m-t-20 font-12"><b>Min value: </b><span class="minValue"></span><b>Max value: </b><span class="maxValue"></span></div>'
 																		+ ' </div>');
@@ -804,7 +831,8 @@
 															//alert(data);
 															values = data;
 
-															if (proptype == 'Numeric Range') {
+															if (proptype == 2) {
+																//alert(min)
 																min = parseInt(values[0]);
 																max = parseInt(values[1]);
 																//alert(min + "  "+ max);
@@ -826,7 +854,7 @@
 																getNoUISliderValue(
 																		rangeSlider,
 																		false);
-															} else if (proptype == 'Enumeration') {
+															} else if (proptype == 3) {
 																$
 																		.each(
 																				values,
@@ -857,7 +885,7 @@
 										});
 					});
 				</script>
-				<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
 					<div class="card">
 						<div class="header">
 							<h2>
@@ -876,7 +904,7 @@
 							<div id="attributes">
 
 								<div id="attribute-1" class="attributeRow row clearfix">
-									<div class="col-sm-3">
+									<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 										<div class="form-group">
 											<div class="form-line">
 												<input type="text" class="form-control propertyName"
@@ -884,7 +912,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="col-sm-3">
+									<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 										<select class="form-control show-tick propertyType">
 											<option value="">--Select a type--</option>
 											<option value="1">Numeric</option>
@@ -894,12 +922,16 @@
 										</select>
 									</div>
 
-									<div class="typeConfig enumerations"></div>
-									<div class="col-sm-1">
-										<button type="button" style="border: none; float: right;"
-											class="btn btn-default btn-xs waves-effect" id="addAttribute">
-											<i style="color: green" class="material-icons">add_circle</i>
+									<div class="typeConfig enumerations"  id="enum"></div>
+									<div class="col-sm-1" >
+										<button  class="btn bg-indigo"  id="addAttribute">
+											<i class="fa fa-plus-circle" aria-hidden="true"></i> Add new
+											property
 										</button>
+										<!--  button type="button" style="border: none; float: right;"
+											class="btn btn-default btn-xs waves-effect" id="addAttribute">
+											<i style="color: green" class="material-icons">add_circle</i>-->
+
 										<br />
 									</div>
 
@@ -912,7 +944,7 @@
 							<div class="row clearfix">
 								<div class="col-sm-12">
 									<div style="text-align: center" class="body">
-										<button type="button" class="btn btn-default waves-effect"
+										<button type="button" class="btn bg-red waves-effect"
 											id="addProp">Send properties</button>
 										<br />
 
@@ -929,7 +961,7 @@
 				<!-- #END# Default Example -->
 			</div>
 			<!-- Draggable Handles -->
-			<div class="row clearfix">
+			<!--div class="row clearfix">
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 					<div class="card">
 						<div class="header">
@@ -986,12 +1018,12 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div-->
 			<!-- #END# Draggable Handles -->
 
 
-			<!-- Draggable Handles -->
-			<div class="row clearfix">
+			<!-- Dr!--aggable Handles -->
+			<!-- div class="row clearfix">
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 					<div class="card">
 						<div class="header">
@@ -1048,7 +1080,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div-->
 			<!-- #END# Draggable Handles -->
 
 		</div>

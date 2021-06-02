@@ -54,6 +54,10 @@ public class Property {
 			return false;
 		return true;
 	}
+	@Override
+	public String toString() {
+		return "Property [name=" + name + ", type=" + type + ", values=" + values + "]";
+	}
 	
 	
 	

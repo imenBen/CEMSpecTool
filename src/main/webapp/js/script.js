@@ -13,14 +13,40 @@ $(function() {
     	}
         if(propertytype == 3){
         	$(this).parents('.attributeRow').find('.typeConfig').html(
-        			'<div class="col-sm-2"><div class="form-group"> <div class="form-line">'+
-           			' <input type="text" class="form-control enumelt" placeholder="Value" >  </div> </div> </div>	<div class="col-sm-1">	'+					
-           			'<button type="button" style = "border: none;float: right;" class="btn btn-default btn-xs waves-effect" id="addenum">'+
-           			'	<i style="color:blue" class="material-icons">add_circle</i>'+
-        			'</button></div>');
+        			'<div class="col-sm-3"><div class="form-group"> <div class="form-line">'+
+           			' <input type="text" class="form-control enumelt" placeholder="Value" >  </div> </div> </div>	<div class="col-sm-1">	'+				
+           			'<button class="btn bg-deep-purple" id="addenum"><i class="fa fa-plus-circle" aria-hidden="true" ></i> Add a value</button>');
+																						
+           			//'<button type="button" style = "border: none;float: right;" class="btn btn-default btn-xs waves-effect" id="addenum">'+
+           			//'	<i style="color:blue" class="material-icons">add_circle</i>'+
+        			//'</button></div>');
     		}
         if(propertytype == 4){
         	$(this).parents('.attributeRow').find('.typeConfig').html('');
+    		}
+    	
+      }); 
+      $('#super-attributes').on('change', '.superPropertyType', function(){						     
+
+        var propertytype = $(this).val();
+        
+    	if(propertytype == 2){
+    		$(this).parents('.superAttributeRow').find('.typeConfig').html('<div class="row clearfix"><div class="col-sm-3"><div class="form-group"> <div class="form-line"><input type="text" class="form-control minRange" placeholder="  min range" ></div></div></div></div><div class="row clearfix"><div class="col-sm-6"></div> <div class="col-sm-3"><div class="form-group"> <div class="form-line"> <input type="text" class="form-control maxRange" placeholder="  max range" ></div></div></div></div>');
+    	}
+        if(propertytype == 1){
+        	$(this).parents('.superAttributeRow').find('.typeConfig').html('');
+    	}
+        if(propertytype == 3){
+        	$(this).parents('.superAttributeRow').find('.typeConfig').html(
+        			'<div class="col-sm-6"><div class="form-group"> <div class="form-line">'+
+           			' <input type="text" class="form-control enumelt" placeholder="Value" >  </div> </div> </div>	<div class="col-sm-1">	'+	
+           		    '<button class="btn bg-deep-purple" id="addenum"><i class="fa fa-plus-circle" aria-hidden="true" ></i> Add a value</button>');				
+           			//'<button type="button" style = "border: none;float: right;" class="btn btn-default btn-xs waves-effect" id="addenum">'+
+           			//'	<i style="color:blue" class="material-icons">add_circle</i>'+
+        			//'</button></div>');
+    		}
+        if(propertytype == 4){
+        	$(this).parents('.superAttributeRow').find('.typeConfig').html('');
     		}
     	
       }); 
@@ -54,16 +80,15 @@ $(function() {
 				    		  $('#attributes').on('click','#addenum',  function(){
 				    			  console.debug(this);
 				    			  $(this).parents('.attributeRow').find('.enumerations').append(
-				    					  '<div class="col-sm-6"></div> <div  class=""><div class="col-sm-2"><div class="form-group"> <div class="form-line">'+
-				    	           			' <input type="text" class="form-control enumelt" placeholder="Value" >  </div> </div> </div>');
+				    					 '<div class = "row clearfix"><div class="col-sm-6"></div> <div  class="col-sm-3"><div class="form-group"> <div class="form-line">'+
+				    	           			' <input type="text" class="form-control enumelt" placeholder="Value" >  </div> </div> </div></div>');
 				    			});
 				    		  $('#super-attributes').on('click','#addenum',  function(){
 				    			  console.debug(this);
 				    			  $(this).parents('.superAttributeRow').find('.enumerations').append(
-				    					  '<div class="col-sm-6"></div><div class="col-sm-1"></div>  <div  class="row clearfix"><div class="col-sm-3"><div class="form-group"> <div class="form-line">'+
+				    					 	  '<div class="col-sm-6"></div><div class="col-sm-1"></div>  <div  class="row clearfix"><div class="col-sm-3"><div class="form-group"> <div class="form-line">'+
 				    	           			' <input type="text" class="form-control enumelt" placeholder="Value" >  </div> </div> </div>');
 				    			});
-				    		  
 				    		  
 				    		  
 				    		  

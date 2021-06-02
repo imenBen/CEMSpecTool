@@ -29,11 +29,22 @@
     
 
 
-    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#e3 -->
+    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#bfdsbdf -->
 
 
-    <DatatypeProperty rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#e3">
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#bfdsbdf">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#ProductCategoryProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#q1"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#bfdsbdf_1 -->
+
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#bfdsbdf_1">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#bfdsbdf"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#q11"/>
         <rdfs:range>
             <rdfs:Datatype>
@@ -42,7 +53,7 @@
                         <onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
                         <withRestrictions rdf:parseType="Collection">
                             <rdf:Description>
-                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">100.0</xsd:minInclusive>
+                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">10.0</xsd:minInclusive>
                             </rdf:Description>
                         </withRestrictions>
                     </rdfs:Datatype>
@@ -61,11 +72,11 @@
     
 
 
-    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#e3_1 -->
+    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#bfdsbdf_2 -->
 
 
-    <DatatypeProperty rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#e3_1">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#ProductCategoryProperty"/>
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#bfdsbdf_2">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#bfdsbdf_1"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#q111"/>
         <rdfs:range>
             <rdfs:Datatype>
@@ -74,7 +85,7 @@
                         <onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
                         <withRestrictions rdf:parseType="Collection">
                             <rdf:Description>
-                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">100.0</xsd:minInclusive>
+                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">10.0</xsd:minInclusive>
                             </rdf:Description>
                         </withRestrictions>
                     </rdfs:Datatype>
@@ -93,71 +104,734 @@
     
 
 
-    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#w1 -->
+    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#dwed -->
 
 
-    <DatatypeProperty rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#w1">
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#dwed">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#ProductCategoryProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#wqd"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#dwed_1 -->
+
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#dwed_1">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#ProductCategoryProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#wqdd"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#dwed_2 -->
+
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#dwed_2">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#dwed_1"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#wqdddew"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#dweq -->
+
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#dweq">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#ProductCategoryProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#wqd"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#dweq_1 -->
+
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#dweq_1">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#ProductCategoryProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#wqdd"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#dweq_2 -->
+
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#dweq_2">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#dweq_1"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#wqdddew"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#dwqde -->
+
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#dwqde">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#ProductCategoryProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#wqd"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>dewqde</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>ewq</rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#dwqde_1 -->
+
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#dwqde_1">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#ProductCategoryProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#wqdd"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>dewqde</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>ewq</rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#dwqde_2 -->
+
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#dwqde_2">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#dwqde_1"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#wqdddew"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>dewqde</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>ewq</rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#ecqwc -->
+
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#ecqwc">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#ProductCategoryProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <unionOf rdf:parseType="Collection">
+                    <rdfs:Datatype>
+                        <onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                        <withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">10.0</xsd:minInclusive>
+                            </rdf:Description>
+                        </withRestrictions>
+                    </rdfs:Datatype>
+                    <rdfs:Datatype>
+                        <onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                        <withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1000.0</xsd:maxInclusive>
+                            </rdf:Description>
+                        </withRestrictions>
+                    </rdfs:Datatype>
+                </unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#ewqde -->
+
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#ewqde">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#ProductCategoryProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>wefewf</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>wqefe</rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#fbfsgb -->
+
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#fbfsgb">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#ProductCategoryProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#fdsvdf -->
+
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#fdsvdf">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#ProductCategoryProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#q1"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </DatatypeProperty>
     
 
 
-    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#w1_1 -->
+    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#fdsvdf_1 -->
 
 
-    <DatatypeProperty rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#w1_1">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#ProductCategoryProperty"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#w1"/>
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#fdsvdf_1">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#fdsvdf"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#q11"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>010</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>gfdgf</rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
     </DatatypeProperty>
     
 
 
-    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#w1_2 -->
+    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#fdsvdf_2 -->
 
 
-    <DatatypeProperty rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#w1_2">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#w1_1"/>
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#fdsvdf_2">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#fdsvdf_1"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#q111"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>010</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>gfdgf</rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#fgsb -->
+
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#fgsb">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#ProductCategoryProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
     </DatatypeProperty>
     
 
 
-    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#w2 -->
+    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#fqwef -->
 
 
-    <DatatypeProperty rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#w2">
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#fqwef">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#ProductCategoryProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#q1"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#qcdfcrwe"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>fqwef</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>weqf</rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#fqwef_1 -->
+
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#fqwef_1">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#fqwef"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#qcdfcrweeqwdf"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>fqwef</rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#fqwef_2 -->
+
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#fqwef_2">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#fqwef_1"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#qcdfcrweeqwdfdqwef"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>fqwef</rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#fqwefe -->
+
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#fqwefe">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#ProductCategoryProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#qcdfcrwe"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </DatatypeProperty>
     
 
 
-    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#w2_1 -->
+    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#fqwefe_1 -->
 
 
-    <DatatypeProperty rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#w2_1">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#ProductCategoryProperty"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#w2"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#q11"/>
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#fqwefe_1">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#fqwefe"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#qcdfcrweeqwdf"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </DatatypeProperty>
     
 
 
-    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#w2_2 -->
+    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#fqwefe_2 -->
 
 
-    <DatatypeProperty rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#w2_2">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#w2_1"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#q111"/>
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#fqwefe_2">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#fqwefe_1"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#qcdfcrweeqwdfdqwef"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>fqwef</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>fweqfe</rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#fqwfe -->
+
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#fqwfe">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#ProductCategoryProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#fweqfqew -->
+
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#fweqfqew">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#ProductCategoryProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#qcdfcrweeqwdf"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <unionOf rdf:parseType="Collection">
+                    <rdfs:Datatype>
+                        <onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                        <withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">66.0</xsd:minInclusive>
+                            </rdf:Description>
+                        </withRestrictions>
+                    </rdfs:Datatype>
+                    <rdfs:Datatype>
+                        <onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                        <withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">99.0</xsd:maxInclusive>
+                            </rdf:Description>
+                        </withRestrictions>
+                    </rdfs:Datatype>
+                </unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#fweqfqew_1 -->
+
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#fweqfqew_1">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#fweqfqew"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#qcdfcrweeqwdfdqwef"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <unionOf rdf:parseType="Collection">
+                    <rdfs:Datatype>
+                        <onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                        <withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">71.0</xsd:minInclusive>
+                            </rdf:Description>
+                        </withRestrictions>
+                    </rdfs:Datatype>
+                    <rdfs:Datatype>
+                        <onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                        <withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">88.0</xsd:maxInclusive>
+                            </rdf:Description>
+                        </withRestrictions>
+                    </rdfs:Datatype>
+                </unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#fwqef -->
+
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#fwqef">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#ProductCategoryProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#qcdfcrwe"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <unionOf rdf:parseType="Collection">
+                    <rdfs:Datatype>
+                        <onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                        <withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">10.0</xsd:minInclusive>
+                            </rdf:Description>
+                        </withRestrictions>
+                    </rdfs:Datatype>
+                    <rdfs:Datatype>
+                        <onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                        <withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1000.0</xsd:maxInclusive>
+                            </rdf:Description>
+                        </withRestrictions>
+                    </rdfs:Datatype>
+                </unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#fwqef_1 -->
+
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#fwqef_1">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#fwqef"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#qcdfcrweeqwdf"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <unionOf rdf:parseType="Collection">
+                    <rdfs:Datatype>
+                        <onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                        <withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">173.3</xsd:minInclusive>
+                            </rdf:Description>
+                        </withRestrictions>
+                    </rdfs:Datatype>
+                    <rdfs:Datatype>
+                        <onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                        <withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">735.46</xsd:maxInclusive>
+                            </rdf:Description>
+                        </withRestrictions>
+                    </rdfs:Datatype>
+                </unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#fwqef_2 -->
+
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#fwqef_2">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#fwqef_1"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#qcdfcrweeqwdfdqwef"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <unionOf rdf:parseType="Collection">
+                    <rdfs:Datatype>
+                        <onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                        <withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">265.0</xsd:minInclusive>
+                            </rdf:Description>
+                        </withRestrictions>
+                    </rdfs:Datatype>
+                    <rdfs:Datatype>
+                        <onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                        <withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">557.0</xsd:maxInclusive>
+                            </rdf:Description>
+                        </withRestrictions>
+                    </rdfs:Datatype>
+                </unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#weqdweq -->
+
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#weqdweq">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#ProductCategoryProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#wqd"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <unionOf rdf:parseType="Collection">
+                    <rdfs:Datatype>
+                        <onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                        <withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">100.0</xsd:minInclusive>
+                            </rdf:Description>
+                        </withRestrictions>
+                    </rdfs:Datatype>
+                    <rdfs:Datatype>
+                        <onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                        <withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">10000.0</xsd:maxInclusive>
+                            </rdf:Description>
+                        </withRestrictions>
+                    </rdfs:Datatype>
+                </unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#weqdweq_1 -->
+
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#weqdweq_1">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#ProductCategoryProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#wqdd"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <unionOf rdf:parseType="Collection">
+                    <rdfs:Datatype>
+                        <onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                        <withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">100.0</xsd:minInclusive>
+                            </rdf:Description>
+                        </withRestrictions>
+                    </rdfs:Datatype>
+                    <rdfs:Datatype>
+                        <onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                        <withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">10000.0</xsd:maxInclusive>
+                            </rdf:Description>
+                        </withRestrictions>
+                    </rdfs:Datatype>
+                </unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#weqdweq_2 -->
+
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#weqdweq_2">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#weqdweq_1"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#wqdddew"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <unionOf rdf:parseType="Collection">
+                    <rdfs:Datatype>
+                        <onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                        <withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">100.0</xsd:minInclusive>
+                            </rdf:Description>
+                        </withRestrictions>
+                    </rdfs:Datatype>
+                    <rdfs:Datatype>
+                        <onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                        <withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">10000.0</xsd:maxInclusive>
+                            </rdf:Description>
+                        </withRestrictions>
+                    </rdfs:Datatype>
+                </unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#wqeffqwef -->
+
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#wqeffqwef">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#ProductCategoryProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#qcdfcrwe"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#wqeffqwef_1 -->
+
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#wqeffqwef_1">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#wqeffqwef"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#qcdfcrweeqwdf"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#wqeffqwef_2 -->
+
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#wqeffqwef_2">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#wqeffqwef_1"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#qcdfcrweeqwdfdqwef"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <unionOf rdf:parseType="Collection">
+                    <rdfs:Datatype>
+                        <onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                        <withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">10316.58</xsd:minInclusive>
+                            </rdf:Description>
+                        </withRestrictions>
+                    </rdfs:Datatype>
+                    <rdfs:Datatype>
+                        <onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                        <withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">67372.87</xsd:maxInclusive>
+                            </rdf:Description>
+                        </withRestrictions>
+                    </rdfs:Datatype>
+                </unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
     </DatatypeProperty>
     
 
@@ -171,6 +845,13 @@
      -->
 
 
+    
+
+
+    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology# -->
+
+
+    <Class rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#"/>
     
 
 
@@ -204,6 +885,60 @@
 
     <Class rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#q111">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#q11"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#qcdfcrwe -->
+
+
+    <Class rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#qcdfcrwe">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#ProductCategory"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#qcdfcrweeqwdf -->
+
+
+    <Class rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#qcdfcrweeqwdf">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#qcdfcrwe"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#qcdfcrweeqwdfdqwef -->
+
+
+    <Class rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#qcdfcrweeqwdfdqwef">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#qcdfcrweeqwdf"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#wqd -->
+
+
+    <Class rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#wqd">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#ProductCategory"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#wqdd -->
+
+
+    <Class rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#wqdd">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#wqd"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#wqdddew -->
+
+
+    <Class rdf:about="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#wqdddew">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/imenbenzarti/ontologies/2017/5/CEMOntology#wqdd"/>
     </Class>
 </rdf:RDF>
 
